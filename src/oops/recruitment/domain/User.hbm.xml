@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-20 11:10:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="oops.recruitment.domain.User" table="USER_TABLE">
+    <cache usage="read-write"/>
+        <id name="id" type="java.lang.Integer">
+            <column name="USER_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="USER_NAME" />
+        </property>
+        <property name="pass" type="java.lang.String">
+            <column name="USER_PASS" />
+        </property>
+        <property name="age" type="int">
+            <column name="USER_AGE" />
+        </property>
+        <property name="School" type="java.lang.String">
+            <column name="USER_SCHOOL" />
+        </property>
+        <set name="applications" table="APPLICATION_TABLE" inverse="true" lazy="false">
+            <key>
+                <column name="APPLICATION_ID" />
+            </key>
+            <one-to-many class="oops.recruitment.domain.Application" />
+        </set>
+    </class>
+</hibernate-mapping>
