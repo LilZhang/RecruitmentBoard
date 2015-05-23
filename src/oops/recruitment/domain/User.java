@@ -1,69 +1,96 @@
 package oops.recruitment.domain;
 
-import java.io.Serializable;
 import java.util.Set;
 
-public class User{
+public class User {
 	private Integer id;
-	private String name;
-	private String pass;
+	private String userName;
+	private String userPass;
+	private String userPn;
 	private int age;
-	private String School;
-	private Set<Application> applications;
+	private String school;
+	private Set<App> apps;
+	
 	public User() {}
-	public User(Integer id, String name, String pass, int age, String school,
-			Set<Application> applications) {		
+
+	public User(Integer id, String userName, String userPass, String userPn,
+			int age, String school, Set<App> apps) {
 		this.id = id;
-		this.name = name;
-		this.pass = pass;
+		this.userName = userName;
+		this.userPass = userPass;
+		this.userPn = userPn;
 		this.age = age;
-		School = school;
-		this.applications = applications;
+		this.school = school;
+		this.apps = apps;
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+
+	public String getUserName() {
+		return userName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	public String getPass() {
-		return pass;
+
+	public String getUserPass() {
+		return userPass;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+
+	public void setUserPass(String userPass) {
+		this.userPass = userPass;
 	}
+
+	public String getUserPn() {
+		return userPn;
+	}
+
+	public void setUserPn(String userPn) {
+		this.userPn = userPn;
+	}
+
 	public int getAge() {
 		return age;
 	}
+
 	public void setAge(int age) {
 		this.age = age;
 	}
+
 	public String getSchool() {
-		return School;
+		return school;
 	}
+
 	public void setSchool(String school) {
-		School = school;
+		this.school = school;
 	}
-	public Set<Application> getApplications() {
-		return applications;
+
+	public Set<App> getApps() {
+		return apps;
 	}
-	public void setApplications(Set<Application> applications) {
-		this.applications = applications;
+
+	public void setApps(Set<App> apps) {
+		this.apps = apps;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((pass == null) ? 0 : pass.hashCode());
+		result = prime * result
+				+ ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result
+				+ ((userPass == null) ? 0 : userPass.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -73,18 +100,21 @@ public class User{
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (name == null) {
-			if (other.name != null)
+		if (userName == null) {
+			if (other.userName != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!userName.equals(other.userName))
 			return false;
-		if (pass == null) {
-			if (other.pass != null)
+		if (userPass == null) {
+			if (other.userPass != null)
 				return false;
-		} else if (!pass.equals(other.pass))
+		} else if (!userPass.equals(other.userPass))
 			return false;
 		return true;
 	}
+	
+	
+	
 	
 	
 }

@@ -1,29 +1,35 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-5-20 11:10:30 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-5-22 16:14:14 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="oops.recruitment.domain.Hr" table="HR_TABLE">
-    <cache usage="read-write"/>
+    	<cache usage="read-write"/>
         <id name="id" type="java.lang.Integer">
             <column name="HR_ID" />
             <generator class="identity" />
         </id>
-        <property name="name" type="java.lang.String">
-            <column name="HR_NAME" />
+        <property name="hrName" type="java.lang.String" not-null="true" length="50" unique="true">
+            <column name="HR_HRNAME" />
         </property>
-        <property name="pass" type="java.lang.String">
-            <column name="HR_PASS" />
+        <property name="hrPass" type="java.lang.String" not-null="true" length="50">
+            <column name="HR_HRPASS" />
         </property>
-        <set name="positions" table="POSITION_TABLE" inverse="true" lazy="false">
+        <property name="hrPn" type="java.lang.String" not-null="true" length="50">
+            <column name="HR_HRPN" />
+        </property>
+        <property name="comp" type="java.lang.String" not-null="true" length="50">
+            <column name="HR_COMP" />
+        </property>
+        <set name="poses" table="POS_TABLE" inverse="true" lazy="false">
             <key>
                 <column name="HR_ID" />
             </key>
-            <one-to-many class="oops.recruitment.domain.Position" />
+            <one-to-many class="oops.recruitment.domain.Pos" />
         </set>
         <set name="replys" table="REPLY_TABLE" inverse="true" lazy="false">
             <key>
-                <column name="hr_ID" />
+                <column name="HR_ID" />
             </key>
             <one-to-many class="oops.recruitment.domain.Reply" />
         </set>

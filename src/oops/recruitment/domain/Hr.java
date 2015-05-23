@@ -4,57 +4,91 @@ import java.util.Set;
 
 public class Hr {
 	private Integer id;
-	private String name;
-	private String pass;
-	private Set<Position> positions;
+	private String hrName;
+	private String hrPass;
+	private String hrPn;
+	private String comp;
+	private Set<Pos> poses;
 	private Set<Reply> replys;
+	
 	public Hr() {}
-	public Hr(Integer id, String name, String pass, Set<Position> positions,
-			Set<Reply> replys) {
+
+	public Hr(Integer id, String hrName, String hrPass, String hrPn,
+			String comp, Set<Pos> poses, Set<Reply> replys) {
 		this.id = id;
-		this.name = name;
-		this.pass = pass;
-		this.positions = positions;
+		this.hrName = hrName;
+		this.hrPass = hrPass;
+		this.hrPn = hrPn;
+		this.comp = comp;
+		this.poses = poses;
 		this.replys = replys;
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+
+	public String getHrName() {
+		return hrName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setHrName(String hrName) {
+		this.hrName = hrName;
 	}
-	public String getPass() {
-		return pass;
+
+	public String getHrPass() {
+		return hrPass;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+
+	public void setHrPass(String hrPass) {
+		this.hrPass = hrPass;
 	}
-	public Set<Position> getPositions() {
-		return positions;
+
+	public String getHrPn() {
+		return hrPn;
 	}
-	public void setPositions(Set<Position> positions) {
-		this.positions = positions;
+
+	public void setHrPn(String hrPn) {
+		this.hrPn = hrPn;
 	}
+
+	public String getComp() {
+		return comp;
+	}
+
+	public void setComp(String comp) {
+		this.comp = comp;
+	}
+
+	public Set<Pos> getPoses() {
+		return poses;
+	}
+
+	public void setPoses(Set<Pos> poses) {
+		this.poses = poses;
+	}
+
 	public Set<Reply> getReplys() {
 		return replys;
 	}
+
 	public void setReplys(Set<Reply> replys) {
 		this.replys = replys;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((pass == null) ? 0 : pass.hashCode());
+		result = prime * result + ((hrName == null) ? 0 : hrName.hashCode());
+		result = prime * result + ((hrPass == null) ? 0 : hrPass.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,18 +98,24 @@ public class Hr {
 		if (getClass() != obj.getClass())
 			return false;
 		Hr other = (Hr) obj;
-		if (name == null) {
-			if (other.name != null)
+		if (hrName == null) {
+			if (other.hrName != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!hrName.equals(other.hrName))
 			return false;
-		if (pass == null) {
-			if (other.pass != null)
+		if (hrPass == null) {
+			if (other.hrPass != null)
 				return false;
-		} else if (!pass.equals(other.pass))
+		} else if (!hrPass.equals(other.hrPass))
 			return false;
 		return true;
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

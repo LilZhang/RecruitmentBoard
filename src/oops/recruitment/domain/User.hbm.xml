@@ -1,31 +1,34 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-5-20 11:10:30 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-5-22 16:14:14 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="oops.recruitment.domain.User" table="USER_TABLE">
-    <cache usage="read-write"/>
+    	<cache usage="read-write"/>
         <id name="id" type="java.lang.Integer">
             <column name="USER_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <property name="name" type="java.lang.String">
-            <column name="USER_NAME" />
+        <property name="userName" type="java.lang.String" not-null="true" length="50" unique="true">
+            <column name="USER_USERNAME" />
         </property>
-        <property name="pass" type="java.lang.String">
-            <column name="USER_PASS" />
+        <property name="userPass" type="java.lang.String" not-null="true" length="50">
+            <column name="USER_USERPASS" />
         </property>
-        <property name="age" type="int">
+        <property name="userPn" type="java.lang.String" not-null="true" length="50">
+            <column name="USER_USERPN" />
+        </property>
+        <property name="age" type="int" not-null="true">
             <column name="USER_AGE" />
         </property>
-        <property name="School" type="java.lang.String">
+        <property name="school" type="java.lang.String" not-null="true" length="50">
             <column name="USER_SCHOOL" />
         </property>
-        <set name="applications" table="APPLICATION_TABLE" inverse="true" lazy="false">
+        <set name="apps" table="APP_TABLE" inverse="true" lazy="false">
             <key>
-                <column name="APPLICATION_ID" />
+                <column name="USER_ID" />
             </key>
-            <one-to-many class="oops.recruitment.domain.Application" />
+            <one-to-many class="oops.recruitment.domain.App" />
         </set>
     </class>
 </hibernate-mapping>
