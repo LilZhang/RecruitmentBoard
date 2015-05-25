@@ -48,7 +48,7 @@ public class HrDaoHibernate extends HibernateDaoSupport implements HrDao {
 
 	@Override
 	public Hr findByName(String name) {
-		List<Hr> hrs = (List<Hr>)getHibernateTemplate().find("from Hr as h where h.hrname = ?",name);
+		List<Hr> hrs = (List<Hr>)getHibernateTemplate().find("from Hr as h where h.hrName = ?",name);
 		if(hrs != null && hrs.size()>=1)
 		{
 			return hrs.get(0);

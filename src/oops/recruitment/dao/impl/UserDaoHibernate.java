@@ -41,14 +41,15 @@ public class UserDaoHibernate extends HibernateDaoSupport implements UserDao {
 
 	@Override
 	public List<User> findByNameAndPass(User user) {
+		System.out.println("Testing UserDao");
 		return (List<User>)getHibernateTemplate()
-				.find("from User as u where u.username = ? and u.userpass = ?",
+				.find("from User u where u.userName = ? and u.userPass = ?",
 						user.getUserName(),user.getUserPass());
 	}
 
 	@Override
 	public User findByName(String name) {
-		List<User> users = (List<User>)getHibernateTemplate().find("from User as u where u.username = ?",name);
+		List<User> users = (List<User>)getHibernateTemplate().find("from User as u where u.userName = ?",name);
 		if(users != null && users.size() >= 1)
 		{
 			return users.get(0);

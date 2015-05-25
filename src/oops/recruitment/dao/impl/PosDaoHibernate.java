@@ -40,12 +40,14 @@ public class PosDaoHibernate extends HibernateDaoSupport implements PosDao {
 	public List<Pos> findAll() {
 		return (List<Pos>)getHibernateTemplate().find("from Pos");
 	}
-		
+	
 	@Override
-	public List<Pos> findByUser(User user) {
-		return (List<Pos>)getHibernateTemplate().find("from Pos as p where p.apps.user = ?",user);	//the HQL may be incorrect.
+	public List<Pos> findByUser(User user) {		
+		//return (List<Pos>)getHibernateTemplate().find("from Pos as p where p.apps.user = ?",user);
+		//Wrong HQL query sentence.
+		return null;
 	}
-
+	
 	@Override
 	public List<Pos> findByHr(Hr hr) {
 		return (List<Pos>)getHibernateTemplate().find("from Pos as p where p.hr = ?",hr);

@@ -19,9 +19,9 @@ public interface HrManager {
 	int validLogin(Hr hr) throws RecruitmentBoardException ;
 	List<GePosBean> getAllPos() throws RecruitmentBoardException ;
 	List<GePosBean> getPos(String hrName) throws RecruitmentBoardException ;
-	List<HrAppBean> getUserApp(String hrName) throws RecruitmentBoardException ;
-	List<HrReplyBean> getUserReply(String hrName) throws RecruitmentBoardException ;
-	List<HrReplyBean> getUserReplyByType(String hrName,int ReplyTypeNum) throws RecruitmentBoardException ;
-	boolean replyApp(int appId, boolean repResult) throws RecruitmentBoardException ;
-	boolean addPos(String hrName,String posName,double posSalary,String posText) throws RecruitmentBoardException;
+	List<HrAppBean> getHrApp(String hrName) throws RecruitmentBoardException ;
+	List<HrReplyBean> getHrReply(String hrName) throws RecruitmentBoardException ;
+	List<HrReplyBean> getHrReplyByType(String hrName,int ReplyTypeNum) throws RecruitmentBoardException ;
+	boolean replyApp(int appId, String repResult) throws RecruitmentBoardException ;
+	boolean addPos(String hrName,String posName,String posSalary,String posText) throws RecruitmentBoardException;
 }

@@ -9,13 +9,13 @@
             <column name="POS_ID" />
             <generator class="identity" />
         </id>
-        <property name="posName" type="java.lang.String" not-null="true" length="50" unique="true">
+        <property name="posName" type="java.lang.String" not-null="true" length="50">
             <column name="POS_POSNAME" />
         </property>
         <property name="posText" type="java.lang.String">
         	<column name="POS_POSTEXT"/>
         </property>
-        <property name="posSalary" type="double" not-null="true">
+        <property name="posSalary" type="java.lang.String" not-null="true" length="50">
             <column name="POS_POSSALARY" />
         </property>
         <property name="posPubTime" type="java.util.Date" not-null="true">

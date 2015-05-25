@@ -7,13 +7,13 @@ public class Pos {
 	private Integer id;
 	private String posName;
 	private String posText;
-	private double posSalary;
+	private String posSalary;
 	private Date posPubTime;
 	private Hr hr;
 	private Set<App> apps;
 	
 	public Pos() {}
-	public Pos(Integer id, String posName,String posText, double posSalary, Date posPubTime,
+	public Pos(Integer id, String posName,String posText, String posSalary, Date posPubTime,
 			Hr hr, Set<App> apps) {
 		this.id = id;
 		this.posName = posName;
@@ -42,10 +42,10 @@ public class Pos {
 	public void setPosText(String posText) {
 		this.posText = posText;
 	}
-	public double getPosSalary() {
+	public String getPosSalary() {
 		return posSalary;
 	}
-	public void setPosSalary(double posSalary) {
+	public void setPosSalary(String posSalary) {
 		this.posSalary = posSalary;
 	}
 	public Date getPosPubTime() {
@@ -70,10 +70,12 @@ public class Pos {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((hr == null) ? 0 : hr.hashCode());
 		result = prime * result + ((posName == null) ? 0 : posName.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(posSalary);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result
+				+ ((posPubTime == null) ? 0 : posPubTime.hashCode());
+		result = prime * result
+				+ ((posSalary == null) ? 0 : posSalary.hashCode());
 		return result;
 	}
 	@Override
@@ -85,19 +87,26 @@ public class Pos {
 		if (getClass() != obj.getClass())
 			return false;
 		Pos other = (Pos) obj;
+		if (hr == null) {
+			if (other.hr != null)
+				return false;
+		} else if (!hr.equals(other.hr))
+			return false;
 		if (posName == null) {
 			if (other.posName != null)
 				return false;
 		} else if (!posName.equals(other.posName))
 			return false;
-		if (Double.doubleToLongBits(posSalary) != Double
-				.doubleToLongBits(other.posSalary))
+		if (posPubTime == null) {
+			if (other.posPubTime != null)
+				return false;
+		} else if (!posPubTime.equals(other.posPubTime))
+			return false;
+		if (posSalary == null) {
+			if (other.posSalary != null)
+				return false;
+		} else if (!posSalary.equals(other.posSalary))
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
 }

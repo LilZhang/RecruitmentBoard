@@ -62,13 +62,22 @@ public class UserManagerImpl implements UserManager {
 	public List<GePosBean> getPos(String userName)
 			throws RecruitmentBoardException {
 		User user = userDao.findByName(userName);
-		List<Pos> poses = posDao.findByUser(user);
+		List<App> apps = appDao.findByUser(user);
 		List<GePosBean> result = new ArrayList<GePosBean>();
+		for(App a : apps)
+		{
+			result.add(new GePosBean(a.getPos().getId(),a.getPos().getPosName(),
+					a.getPos().getPosSalary(),a.getPos().getPosText(),a.getPos().getPosPubTime(),
+					a.getPos().getHr().getComp()));
+		}
+		/*
+		List<Pos> poses = posDao.findByUser(user);		
 		for(Pos p : poses)
 		{
 			result.add(new GePosBean(p.getId(),p.getPosName(),
 					p.getPosSalary(),p.getPosText(),p.getPosPubTime(),p.getHr().getComp()));
 		}		
+		*/
 		return result;
 	}
 

@@ -72,7 +72,7 @@ public class HrManagerImpl implements HrManager {
 	}
 
 	@Override
-	public List<HrAppBean> getUserApp(String hrName)
+	public List<HrAppBean> getHrApp(String hrName)
 			throws RecruitmentBoardException {
 		Hr hr = hrDao.findByName(hrName);
 		List<App> apps = appDao.findByHr(hr);
@@ -87,7 +87,7 @@ public class HrManagerImpl implements HrManager {
 	}
 
 	@Override
-	public List<HrReplyBean> getUserReply(String hrName)
+	public List<HrReplyBean> getHrReply(String hrName)
 			throws RecruitmentBoardException {
 		Hr hr = hrDao.findByName(hrName);
 		List<Reply> replys = replyDao.findByHr(hr);
@@ -103,7 +103,7 @@ public class HrManagerImpl implements HrManager {
 	}
 
 	@Override
-	public List<HrReplyBean> getUserReplyByType(String hrName, int ReplyTypeNum)
+	public List<HrReplyBean> getHrReplyByType(String hrName, int ReplyTypeNum)
 			throws RecruitmentBoardException {
 		Hr hr = hrDao.findByName(hrName);
 		RepType repType = repTypeDao.get(ReplyTypeNum);
@@ -120,15 +120,15 @@ public class HrManagerImpl implements HrManager {
 	}
 
 	@Override
-	public boolean replyApp(int appId, boolean repResult)
+	public boolean replyApp(int appId, String repResult)
 			throws RecruitmentBoardException {
 		App app = appDao.get(appId);
 		Reply reply = replyDao.findByApp(app);
-		if(repResult)
+		if(repResult.equals("deny"))
 		{
 			reply.setRepType(repTypeDao.get(2));
 		}
-		else
+		else if(repResult.equals("ok"))
 		{
 			reply.setRepType(repTypeDao.get(3));
 		}
@@ -139,7 +139,7 @@ public class HrManagerImpl implements HrManager {
 	}
 
 	@Override
-	public boolean addPos(String hrName, String posName, double posSalary,
+	public boolean addPos(String hrName, String posName, String posSalary,
 			String posText) throws RecruitmentBoardException {
 		Pos pos = new Pos();
 		pos.setPosName(posName);

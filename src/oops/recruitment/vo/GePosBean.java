@@ -5,14 +5,14 @@ import java.util.Date;
 public class GePosBean {
 	private int id;
 	private String name;
-	private double salary;
+	private String salary;
 	private String descText;
 	private Date pubTime;
 	private String enterprise;
 	
 	public GePosBean() {}
 
-	public GePosBean(int id, String name, double salary, String descText,
+	public GePosBean(int id, String name, String salary, String descText,
 			Date pubTime, String enterprise) {
 		this.id = id;
 		this.name = name;
@@ -38,11 +38,11 @@ public class GePosBean {
 		this.name = name;
 	}
 
-	public double getSalary() {
+	public String getSalary() {
 		return salary;
 	}
 
-	public void setSalary(double salary) {
+	public void setSalary(String salary) {
 		this.salary = salary;
 	}
 
