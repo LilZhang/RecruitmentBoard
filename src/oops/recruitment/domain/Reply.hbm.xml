@@ -3,23 +3,26 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2015-5-22 16:14:14 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="oops.recruitment.domain.Reply" table="REPLY_TABLE">
-    	<cache usage="read-write"/>
-        <id name="id" type="java.lang.Integer">
-            <column name="REPLY_ID" />
-            <generator class="identity" />
-        </id>
-        <property name="replyTime" type="java.util.Date" not-null="true">
-            <column name="REPLY_REPLYTIME" />
-        </property>
-        <many-to-one name="app" class="oops.recruitment.domain.App" unique="true"  not-null="true" lazy="false">
-            <column name="APP_ID" />
-        </many-to-one>
-        <many-to-one name="hr" class="oops.recruitment.domain.Hr" not-null="true" lazy="false">
-            <column name="HR_ID" />
-        </many-to-one>
-        <many-to-one name="repType" class="oops.recruitment.domain.RepType" not-null="true" lazy="false">
-            <column name="REPTYPE_ID" />
-        </many-to-one>
-    </class>
+	<class name="oops.recruitment.domain.Reply" table="REPLY_TABLE">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer">
+			<column name="REPLY_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="replyTime" type="java.util.Date" not-null="true">
+			<column name="REPLY_REPLYTIME" />
+		</property>
+		<many-to-one name="app" class="oops.recruitment.domain.App"
+			unique="true" not-null="true" lazy="false">
+			<column name="APP_ID" />
+		</many-to-one>
+		<many-to-one name="hr" class="oops.recruitment.domain.Hr"
+			not-null="true" lazy="false">
+			<column name="HR_ID" />
+		</many-to-one>
+		<many-to-one name="repType" class="oops.recruitment.domain.RepType"
+			not-null="true" lazy="false">
+			<column name="REPTYPE_ID" />
+		</many-to-one>
+	</class>
 </hibernate-mapping>

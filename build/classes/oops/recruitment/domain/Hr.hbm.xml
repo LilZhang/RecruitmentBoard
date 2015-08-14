@@ -3,35 +3,39 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2015-5-22 16:14:14 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="oops.recruitment.domain.Hr" table="HR_TABLE">
-    	<cache usage="read-write"/>
-        <id name="id" type="java.lang.Integer">
-            <column name="HR_ID" />
-            <generator class="identity" />
-        </id>
-        <property name="hrName" type="java.lang.String" not-null="true" length="50" unique="true">
-            <column name="HR_HRNAME" />
-        </property>
-        <property name="hrPass" type="java.lang.String" not-null="true" length="50">
-            <column name="HR_HRPASS" />
-        </property>
-        <property name="hrPn" type="java.lang.String" not-null="true" length="50">
-            <column name="HR_HRPN" />
-        </property>
-        <property name="comp" type="java.lang.String" not-null="true" length="50">
-            <column name="HR_COMP" />
-        </property>
-        <set name="poses" table="POS_TABLE" inverse="true" lazy="false">
-            <key>
-                <column name="HR_ID" />
-            </key>
-            <one-to-many class="oops.recruitment.domain.Pos" />
-        </set>
-        <set name="replys" table="REPLY_TABLE" inverse="true" lazy="false">
-            <key>
-                <column name="HR_ID" />
-            </key>
-            <one-to-many class="oops.recruitment.domain.Reply" />
-        </set>
-    </class>
+	<class name="oops.recruitment.domain.Hr" table="HR_TABLE">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer">
+			<column name="HR_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="hrName" type="java.lang.String" not-null="true"
+			length="50" unique="true">
+			<column name="HR_HRNAME" />
+		</property>
+		<property name="hrPass" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="HR_HRPASS" />
+		</property>
+		<property name="hrPn" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="HR_HRPN" />
+		</property>
+		<property name="comp" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="HR_COMP" />
+		</property>
+		<set name="poses" table="POS_TABLE" inverse="true" lazy="false">
+			<key>
+				<column name="HR_ID" />
+			</key>
+			<one-to-many class="oops.recruitment.domain.Pos" />
+		</set>
+		<set name="replys" table="REPLY_TABLE" inverse="true" lazy="false">
+			<key>
+				<column name="HR_ID" />
+			</key>
+			<one-to-many class="oops.recruitment.domain.Reply" />
+		</set>
+	</class>
 </hibernate-mapping>

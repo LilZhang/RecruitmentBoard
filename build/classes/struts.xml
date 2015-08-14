@@ -6,9 +6,9 @@
 
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
-	<constant name="struts.custom.i18n.resources" value="resource"/>
-	<constant name="struts.i18n.encoding" value="GBK"/>
-	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.custom.i18n.resources" value="resource" />
+	<constant name="struts.i18n.encoding" value="GBK" />
+	<constant name="struts.devMode" value="true" />
 	<package name="default" extends="struts-default" namespace="/rb">
 		<global-results>
 			<result name="business">/WEB-INF/content/error.jsp</result>
@@ -17,12 +17,11 @@
 			<result name="login">/WEB-INF/content/login.jsp</result>
 		</global-results>
 		<global-exception-mappings>
-			<exception-mapping 
-				exception="oops.recruitment.exception.HrException"
-				result="business"/>
-			<exception-mapping exception="java.lang.Exception" 
-				result="root"/>
-		</global-exception-mappings>		
+			<exception-mapping exception="oops.recruitment.exception.HrException"
+				result="business" />
+			<exception-mapping exception="java.lang.Exception"
+				result="root" />
+		</global-exception-mappings>
 		<action name="AddPosHr">
 			<result>/WEB-INF/content/hr/AddPosHr.jsp</result>
 		</action>
@@ -36,14 +35,14 @@
 			<result>/WEB-INF/content/hr/index.jsp</result>
 		</action>
 		<action name="processAddPos" class="oops.recruitment.action.hr.AddPosHr">
-			<result name="success">/WEB-INF/content/hr/AddPosHr.jsp</result>			
+			<result name="success">/WEB-INF/content/hr/AddPosHr.jsp</result>
 		</action>
 		<action name="processAddApp" class="oops.recruitment.action.user.AddAppUser">
 			<result>/WEB-INF/content/user/PosAllUser.jsp</result>
 		</action>
 		<action name="processRepApp" class="oops.recruitment.action.hr.ReplyAppHr">
 			<result>/WEB-INF/content/hr/ReplyHrByType.jsp</result>
-		</action>		
+		</action>
 		<action name="ReplyUserByType" class="oops.recruitment.action.user.ReplyUserByType">
 			<result>/WEB-INF/content/user/ReplyUserByType.jsp</result>
 		</action>
