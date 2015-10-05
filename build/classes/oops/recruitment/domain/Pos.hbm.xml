@@ -3,32 +3,35 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2015-5-22 16:14:14 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="oops.recruitment.domain.Pos" table="POS_TABLE">
-    	<cache usage="read-write"/>
-        <id name="id" type="java.lang.Integer">
-            <column name="POS_ID" />
-            <generator class="identity" />
-        </id>
-        <property name="posName" type="java.lang.String" not-null="true" length="50">
-            <column name="POS_POSNAME" />
-        </property>
-        <property name="posText" type="java.lang.String">
-        	<column name="POS_POSTEXT"/>
-        </property>
-        <property name="posSalary" type="java.lang.String" not-null="true" length="50">
-            <column name="POS_POSSALARY" />
-        </property>
-        <property name="posPubTime" type="java.util.Date" not-null="true">
-            <column name="POS_POSPUBTIME" />
-        </property>
-        <many-to-one name="hr" class="oops.recruitment.domain.Hr" not-null="true" lazy="false">
-            <column name="HR_ID" />
-        </many-to-one>
-        <set name="apps" table="APP_TABLE" inverse="true" lazy="false">
-            <key>
-                <column name="POS_ID" />
-            </key>
-            <one-to-many class="oops.recruitment.domain.App" />
-        </set>
-    </class>
+	<class name="oops.recruitment.domain.Pos" table="POS_TABLE">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer">
+			<column name="POS_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="posName" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="POS_POSNAME" />
+		</property>
+		<property name="posText" type="java.lang.String">
+			<column name="POS_POSTEXT" />
+		</property>
+		<property name="posSalary" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="POS_POSSALARY" />
+		</property>
+		<property name="posPubTime" type="java.util.Date" not-null="true">
+			<column name="POS_POSPUBTIME" />
+		</property>
+		<many-to-one name="hr" class="oops.recruitment.domain.Hr"
+			not-null="true" lazy="false">
+			<column name="HR_ID" />
+		</many-to-one>
+		<set name="apps" table="APP_TABLE" inverse="true" lazy="false">
+			<key>
+				<column name="POS_ID" />
+			</key>
+			<one-to-many class="oops.recruitment.domain.App" />
+		</set>
+	</class>
 </hibernate-mapping>

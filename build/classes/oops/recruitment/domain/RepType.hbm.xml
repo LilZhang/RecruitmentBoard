@@ -3,14 +3,15 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2015-5-22 16:14:14 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="oops.recruitment.domain.RepType" table="REPTYPE_TABLE">
-    	<cache usage="read-write"/>
-        <id name="id" type="java.lang.Integer">
-            <column name="REPTYPE_ID" />
-            <generator class="identity" />
-        </id>
-        <property name="rtype" type="java.lang.String" length="50" not-null="true" unique="true">
-            <column name="REPTYPE_RTYPE" />
-        </property>
-    </class>
+	<class name="oops.recruitment.domain.RepType" table="REPTYPE_TABLE">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer">
+			<column name="REPTYPE_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="rtype" type="java.lang.String" length="50"
+			not-null="true" unique="true">
+			<column name="REPTYPE_RTYPE" />
+		</property>
+	</class>
 </hibernate-mapping>

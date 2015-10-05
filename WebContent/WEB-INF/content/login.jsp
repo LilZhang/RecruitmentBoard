@@ -7,27 +7,27 @@
 <title>登录</title>
 </head>
 <body>
-<%@include file="header.jsp" %>
-<hr/>
-<s:if test="tip!=null">
-	<s:property value="tip"/>
-</s:if>
-<br/>
-User
-<s:form action="rb/userlogin" method="post">
-	<s:textfield name="user.userName" label="用户名"/>
-	<s:textfield name="user.userPass" label="密码"/>
-	<s:submit value="登录"/><s:reset value="重填"/>
-</s:form>
-<br/>
-<hr/>
-<br/>
-Hr
-<s:form action ="rb/hrlogin"  method="post">
-	<s:textfield name="hr.hrName" label="用户名"/>
-	<s:textfield name="hr.hrPass" label="密码"/>
-	<s:submit value="登录"/><s:reset value="重填"/>
-</s:form>
-<%@include file="footer.jsp" %>
+	<%@include file="header.jsp"%>
+	<hr />
+	<s:if test="tip!=null">
+		<s:property value="tip" />
+	</s:if>
+	<br /> User
+	<s:form action="rb/userlogin" method="post">
+		<s:textfield name="user.userName" label="用户名" />
+		<s:textfield name="user.userPass" label="密码" />
+		<s:submit value="登录" />
+		<s:reset value="重填" />
+	</s:form>
+	<br />
+	<hr />
+	<br /> Hr
+	<s:form action="rb/hrlogin" method="post">
+		<s:textfield name="hr.hrName" label="用户名" />
+		<s:textfield name="hr.hrPass" label="密码" />
+		<s:submit value="登录" />
+		<s:reset value="重填" />
+	</s:form>
+	<%@include file="footer.jsp"%>
 </body>
 </html>

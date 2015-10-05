@@ -3,32 +3,36 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2015-5-22 16:14:14 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="oops.recruitment.domain.User" table="USER_TABLE">
-    	<cache usage="read-write"/>
-        <id name="id" type="java.lang.Integer">
-            <column name="USER_ID" />
-            <generator class="identity" />
-        </id>
-        <property name="userName" type="java.lang.String" not-null="true" length="50" unique="true">
-            <column name="USER_USERNAME" />
-        </property>
-        <property name="userPass" type="java.lang.String" not-null="true" length="50">
-            <column name="USER_USERPASS" />
-        </property>
-        <property name="userPn" type="java.lang.String" not-null="true" length="50">
-            <column name="USER_USERPN" />
-        </property>
-        <property name="age" type="int" not-null="true">
-            <column name="USER_AGE" />
-        </property>
-        <property name="school" type="java.lang.String" not-null="true" length="50">
-            <column name="USER_SCHOOL" />
-        </property>
-        <set name="apps" table="APP_TABLE" inverse="true" lazy="false">
-            <key>
-                <column name="USER_ID" />
-            </key>
-            <one-to-many class="oops.recruitment.domain.App" />
-        </set>
-    </class>
+	<class name="oops.recruitment.domain.User" table="USER_TABLE">
+		<cache usage="read-write" />
+		<id name="id" type="java.lang.Integer">
+			<column name="USER_ID" />
+			<generator class="identity" />
+		</id>
+		<property name="userName" type="java.lang.String" not-null="true"
+			length="50" unique="true">
+			<column name="USER_USERNAME" />
+		</property>
+		<property name="userPass" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="USER_USERPASS" />
+		</property>
+		<property name="userPn" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="USER_USERPN" />
+		</property>
+		<property name="age" type="int" not-null="true">
+			<column name="USER_AGE" />
+		</property>
+		<property name="school" type="java.lang.String" not-null="true"
+			length="50">
+			<column name="USER_SCHOOL" />
+		</property>
+		<set name="apps" table="APP_TABLE" inverse="true" lazy="false">
+			<key>
+				<column name="USER_ID" />
+			</key>
+			<one-to-many class="oops.recruitment.domain.App" />
+		</set>
+	</class>
 </hibernate-mapping>

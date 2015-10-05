@@ -7,33 +7,33 @@
 <title>ReplyHr.jsp</title>
 </head>
 <body>
-<%@ include file="../header.jsp" %>
-<%@ include file="hrheader.jsp" %>
-<hr/>
-<s:property value="#session.user"/>
-<br/>
-<table width="300" border="1">
-	<tr height="30">
-		<td>posName</td>
-		<td>appTime</td>
-		<td>userName</td>
-		<td>userAge</td>
-		<td>userSchool</td>
-		<td>replyType</td>
-		<td>replyTime</td>
-	</tr>
-<s:iterator value="replys" status="index">
-	<tr height="30">
-		<td><s:property value="posName"/></td>
-		<td><s:property value="appTime"/></td>
-		<td><s:property value="userName"/></td>
-		<td><s:property value="userAge"/></td>
-		<td><s:property value="userSchool"/></td>
-		<td><s:property value="replyType"/></td>
-		<td><s:property value="replyTime"/></td>
-	</tr>
-</s:iterator>
-</table>
-<%@ include file="../footer.jsp" %>
+	<%@ include file="../header.jsp"%>
+	<%@ include file="hrheader.jsp"%>
+	<hr />
+	<s:property value="#session.user" />
+	<br />
+	<table width="300" border="1">
+		<tr height="30">
+			<td>posName</td>
+			<td>appTime</td>
+			<td>userName</td>
+			<td>userAge</td>
+			<td>userSchool</td>
+			<td>replyType</td>
+			<td>replyTime</td>
+		</tr>
+		<s:iterator value="replys" status="index">
+			<tr height="30">
+				<td><s:property value="posName" /></td>
+				<td><s:property value="appTime" /></td>
+				<td><s:property value="userName" /></td>
+				<td><s:property value="userAge" /></td>
+				<td><s:property value="userSchool" /></td>
+				<td><s:property value="replyType" /></td>
+				<td><s:property value="replyTime" /></td>
+			</tr>
+		</s:iterator>
+	</table>
+	<%@ include file="../footer.jsp"%>
 </body>
 </html>
